@@ -1,0 +1,20 @@
+<p>profile works!</p>
+
+<div *ngFor="let y of karyawan">
+    NIK: {{ y.nik }} <br>
+    Nama: {{ y.name }}
+    <hr>
+</div>
+
+<br>
+<hr>
+<div *ngIf="karwayanTerpilih.nik !== 0">
+    Karyawan Terpilih: <br>
+    NIK karyawan: {{ karwayanTerpilih.nik }} <br>
+    Nama karyawan: {{ karwayanTerpilih.name }}
+</div>
+<div *ngIf="karwayanTerpilih.nik === 0">
+<h2>Tidak ada Karyawan yang Terpilih!</h2>
+</div>
+
+<button (click)="onlogin()">Home</button>
