@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProfileModel } from 'src/app/model/profile';
@@ -24,10 +25,23 @@ export class ProfileComponent implements OnInit {
   karwayanTerpilih: ProfileModel = new ProfileModel();
 
   ngOnInit(): void {
-    this.karyawan = this.pService.profileList;
+    console.log('satu');
+    console.log('dua');
+    
+    this.pService.getProfileList()
+    .subscribe((x: any) => {
+      console.log('tiga');
+      this.karyawan = x.data;
+    });
+
+    console.log('empat');
 
     if(this.NIKKaryawan){
-      this.karwayanTerpilih = this.pService.getProfileByNik(Number(this.NIKKaryawan)) || new ProfileModel();
+      this.pService.getProfileByNik(Number(this.NIKKaryawan))
+      .subscribe(x => {
+        console.log(x);
+        // this.karwayanTerpilih = x;
+      });
     }
   }
 

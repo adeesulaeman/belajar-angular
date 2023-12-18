@@ -1,19 +1,20 @@
 <p>profile works!</p>
 
 <div *ngFor="let y of karyawan">
-    NIK: {{ y.nik }} <br>
-    Nama: {{ y.name }}
+    ID: {{ y.id }} <br>
+    Nama: {{ y.first_name }} {{ y.last_name }} <br>
+    Email: {{ y.email }}
     <hr>
 </div>
 
 <br>
 <hr>
-<div *ngIf="karwayanTerpilih.nik !== 0">
+<div *ngIf="karwayanTerpilih.id !== 0">
     Karyawan Terpilih: <br>
-    NIK karyawan: {{ karwayanTerpilih.nik }} <br>
-    Nama karyawan: {{ karwayanTerpilih.name }}
+    NIK karyawan: {{ karwayanTerpilih.id }} <br>
+    Nama karyawan: {{ karwayanTerpilih.first_name }} {{ karwayanTerpilih.last_name }}
 </div>
-<div *ngIf="karwayanTerpilih.nik === 0">
+<div *ngIf="karwayanTerpilih.id === 0">
 <h2>Tidak ada Karyawan yang Terpilih!</h2>
 </div>
 

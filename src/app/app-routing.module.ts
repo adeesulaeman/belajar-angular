@@ -12,6 +12,11 @@ const routes: Routes = [
     path: 'dasboard',
     loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule)
   },
+  {
+    // lazy load
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
+  },
 ];
 
 @NgModule({
