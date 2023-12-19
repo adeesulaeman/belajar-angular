@@ -27,7 +27,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     console.log('satu');
     console.log('dua');
-    
+
     this.pService.getProfileList()
     .subscribe((x: any) => {
       console.log('tiga');
@@ -50,6 +50,10 @@ export class ProfileComponent implements OnInit {
     // panggil service, cek apakah username dan password sesuai atau tidak
     // jika sesuai, pindah url ke profile
     this.router.navigateByUrl('/dasboard');
+  }
+
+  tambahData(){
+    this.karyawan.push({id: 100, email: 'dsadsa', first_name: 'ade', last_name: 'oke', avatar: ''});
   }
 
 }
